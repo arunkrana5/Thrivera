@@ -1,0 +1,56 @@
+﻿
+@model IList<LeaveBalance.List>
+
+<div class="table-responsive">
+    <table id="example" class="table table-hover table-bordered dt-responsive nowrap tbltick new_width table-responsive-md table-responsive-sm" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
+        <thead>
+            <tr>
+                <th>S.no.</th>
+                <th>Action</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Opening </br>(A)</th>
+                <th>Accrued </br>(B)</th>
+                <th>Arrears </br>(C)</th>
+                <th>Total </br>Z=(A+B+C)</th>
+                <th>Availed </br>(X)</th>
+                <th>Balance </br> (Z-X)</th>
+                <th>Inserted Date</th>
+                <th>Inserted by</th>
+                <th>Updated Date</th>
+                <th>Updated by</th>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int Count = 0;}
+            @foreach (var item in Model)
+            {
+                Count++;
+            <tr>
+                <td>@Count</td>
+                <td>
+                    <input type="hidden" name="I" value="@item.LBID" />
+                    <input type="hidden" name="N" value="@item.EMPName" />
+                    <a title="Edit" onclick="ViewLeaveTran(this);" data-toggle='tooltip'>@*<i class="fa fa-pencil-square-o checkgreen" aria-hidden="true"></i>*@ <i class="fa-solid fa-pen-to-square "></i> </a>
+                </td>
+                <td> @item.EMPName</td>
+                <td> @item.EMPCode</td>
+                <td>@item.Opening_Hrs</td>
+                <td>@item.Accrued_Hrs</td>
+                <td>@item.Arrears_Hrs</td>
+                <td>@item.Total_Hrs</td>
+                <td>@item.Availed_Hrs</td>
+                <td>@item.Balance_Hrs</td>
+
+                <td>@item.CreatedDate</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.ModifiedDate</td>
+                <td>@item.ModifiedBy</td>
+                <td>@item.IPAddress</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

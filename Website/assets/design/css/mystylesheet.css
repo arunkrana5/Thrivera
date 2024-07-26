@@ -1,0 +1,612 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap');
+/*---Welcome page*/
+
+.welcomePage {
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    background-image: url('../images/wlcmbg.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:500px;
+    margin:auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wlc-dgn{
+    width:100%;
+    top:40px;
+}
+    .wlc-dgn .black {
+        color: black;
+        font-weight:400;
+    }
+.wlc-dgn .super-admin{
+    background-color:#524595;
+    color:#fff;
+    cursor:pointer;
+    padding:6px 0;
+    text-align:center;
+    width:150px;
+    border-radius:20px;
+}
+    .wlc-dgn .super-admin:hover {
+        background-color: #524595;
+        opacity:0.7;
+    }
+    .wlc-dgn .company-name {
+        color: #524595;
+    }
+.hellotext span {
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #000;
+}
+.wlcm-design {
+       background-color: #fff;
+}
+/*-----Welcome page*/
+.app-content {
+    margin-top: 45px;
+}
+#app-sidebar3 .menu_section .side-menu {
+    font-size: 32px;
+}
+.select2-container--default .select2-selection--single {
+    border-radius: 4px;
+}
+.select2-container--default .select2-selection--multiple {
+    border-radius: 4px;
+}
+.form-control {
+    border-radius: 4px;
+}
+
+.emp-mast {
+    background-color: #fff;
+  border-radius:15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+    .emp-mast .card-header {
+        background-color: #fff;
+        border-bottom:none;
+        padding-left:10px;
+    }
+    .emp-mast .card-header h3{
+        padding-left:0px;
+        font-size:16px;
+    }
+
+
+.mop-section .page-title{
+    padding-left:0px !important;
+    margin-left:0px !important;
+}
+/*--------------------------------P---------------------------------------*/
+.heading-grd p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+
+/*-------------------------Buttons------------------------------*/
+
+
+.client-save {
+    border-radius: 4px;
+    font-size: 16px;
+    width: 150px;
+    height: 37px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+    .client-save:hover a {
+        color: black;
+    }
+
+
+.client-close {
+    border-radius: 4px;
+    font-size: 16px;
+    width: 150px;
+    height: 37px;
+    background-color: #6c757d;
+    color: #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+    .client-close:hover {
+        background-color: #888 !important;
+    }
+.btnOk {
+    border-radius: 4px;
+    font-size: 14px;
+    width: 150px;
+    height: 37px;
+    background-color:#157347 !important;
+    color:#fff !important;
+    margin:0px !important;
+}
+.button-th{
+    border-radius: 4px;
+    font-size: 14px;
+    width: 150px;
+    height: 37px;
+  
+    margin: 0px !important;
+}
+    .button-th:hover {
+        color:#fff;
+        background-color: #32ed80;
+    }
+  
+
+.btnOk :hover {
+    background-color: #006400;
+}
+
+.btn-imp {
+    border-bottom: 4px solid #00a896;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #888 !important;
+    width: 140px;
+    height: 37px;
+    padding-top:5px;
+    text-align:center;
+    font-weight: 400;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background: #fff;
+}
+    .btn-imp:hover {
+        border-bottom: 4px solid #02c39a;
+    }
+
+.btn-pdf {
+    border-bottom: 4px solid #f48e15;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #888 !important;
+    width: 150px;
+    height: 37px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background: #fff;
+}
+
+    .btn-pdf:hover {
+        border-bottom: 4px solid #f48e15;
+    }
+
+
+
+.btn-exp {
+    border-bottom: 4px solid #0081a7;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #888 !important;
+    width: 140px;
+    height: 37px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background: #fff;
+}
+
+    .btn-exp:hover {
+        border-bottom: 4px solid #00afb9;
+    }
+.btn-dsf {
+    padding: 8px 10px;
+    background-color: #fff;
+    color: #888 !important;
+    border-bottom: 4px solid #0081a7;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+    .btn-dsf:hover {
+        border-bottom: 4px solid #00afb9;
+    }
+
+    .btn-send {
+        background: none repeat scroll 0 0 #00a8b3;
+        color: #fff;
+    }
+
+lose-btn {
+    border: 1px solid #6574cd;
+    background: #fff;
+    color: #6574cd
+}
+
+.btn-send:hover {
+    background: none repeat scroll 0 0 #00a8b3;
+    color: #fff;
+    background: none repeat scroll 0 0 #009da7;
+}
+
+.downloads-butn {
+    background-color: #5cb85c;
+    color: #fff !important;
+    width: 150px;
+    height: 37px;
+   
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+    .downloads-butn:hover {
+      width: 150px !important;
+    height: 37px;
+        color: #fff !important;
+        background-color: #008000 !important;
+    }
+    /*----------**---------------Buttons--------------**----------------*/
+    .leave-calender table td {
+        color: #888;
+        padding: 0px !important;
+        font-size: 14px !important;
+    }
+.leave-calender table{
+    box-shadow:none;
+}
+
+.leave-calender .form-group p, td{
+    border:none;
+}
+/*-----------------------sales entry---------------------*/
+.salesEnt h4{
+    font-weight:400;
+    font-size:18px;
+}
+.sales-entry .card-header-sales {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 5px 10px 5px 10px;
+   
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: none !important;
+}
+.sales-entry h4{
+    padding:0px !important;
+    font-size:16px;
+    margin:0px;
+   padding-bottom:0px !important;
+    font-weight:400;
+    
+}
+.sales-entry .form-control{
+    border-radius:4px;
+}
+.sales-entry .select2-container .select2-selection--single {
+    border-radius: 4px;
+}
+/*---------------------------count----------------------------------*/
+/*count-card1 card{
+    box-shadow:none;
+    background-color:none;
+}*/
+.count-cards {
+    width:110px;
+    background-color: #fff;
+    border-radius:8px;
+    margin-top:2px;
+    margin-bottom:30px;
+    box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);
+}
+.dh_p {
+    color: #0dcd94;
+}
+.dh_p p {
+    color: #0dcd94 !important;
+}
+
+.dh_hd {
+    color: #fbc518;
+}
+.dh_hd p{
+    color: #fbc518 !important;
+}
+.dh_woff {
+    color: #f7284a;
+}
+.dh_woff p{
+    color: #f7284a !important;
+}
+.dh_leave {
+    color: #ef4eb8;
+}
+    .dh_leave p {
+        color: #ef4eb8 !important;
+    }
+
+
+.dh_a{
+    color: #fbc518;
+    font-weight: normal;
+}
+
+    .dh_a p {
+        color: #fbc518 !important;
+   
+        font-weight: normal;
+    }
+
+   /* .dh_p {
+        color: #008000;
+        font-weight: normal;
+    }*/
+
+.dh_lwp {
+    color: #007bff;
+    font-weight: normal;
+}
+.dh_lwp p{
+    color: #007bff !important;
+    font-weight: normal;
+}
+
+.dh_iamsafe {
+    color: #4454c3;
+    font-weight: normal;
+}
+.dh_iamsafe p{
+    color: #4454c3 !important;
+    font-weight: normal;
+}
+
+.dh_holiday {
+    color: #c344ff;
+}
+.dh_holiday p{
+    color: #c344ff !important;
+}
+
+.dh_loadingimg
+{
+
+}
+.dh_absentfrom3days {
+    color: #007bff;
+
+}
+.lower-count {
+ /*   background-color: #fff;
+    box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);*/
+    padding: 2px;
+    border-radius:5px;
+}
+    .lower-count .card-block {
+        padding: 13px;
+        width:200px;
+        border-radius:8px;
+        background-color: #fff;
+        box-shadow: none;
+        margin-bottom:20px;
+        box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);
+    }
+    .lower-count .card{
+        box-shadow:none;
+        padding:0px;
+        margin:0px;
+    }
+
+    
+
+    
+    /*------------------------------count------------------------------*/
+    .fa-circle-check {
+        color: green !important;
+    }
+.fa-circle-xmark {
+    color: red !important;
+}
+.fa-pen-to-square {
+    color: #219ebc !important;
+}
+
+/*------------------*/
+.table-section {
+    background-color: #fff;
+    /* padding: 10px;*/
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 20px;
+    margin-top: 20px;
+
+}
+
+    .table-section .card {
+        box-shadow: none;
+    }
+
+    .table-section table td{
+        border: 1px solid #eff0f6;
+    }
+
+    /*-------------------------form-control overflow--------------------------*/
+
+.colum-exp .select2-container--default .select2-selection--multiple {
+   
+    overflow-y: scroll;
+}
+#client-table table th{
+background-color:#eaeaea !important;
+color:#000;
+}
+.client-header {
+    color: #fff;
+    background-color: #005f73;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+    .client-header h3 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+    }
+    /*-----------------------------loader-----------------------------------------*/
+    #TargetDiv .imgloader {
+        display: block;
+        margin: 0px auto;
+        max-width: 350px;
+    }
+/*-------------------------------border------------------------------------------*/
+.rl-border-2{
+    border-top: 3px solid #d90429;
+}
+
+.rl-border-1  {
+    border-top: 3px solid #26a69a;
+}
+
+.rl-border-3 {
+    border-top: 3px solid #1f91f3;
+}
+.rl-border-4 {
+    border-top: 3px solid #c344ff;
+}
+.rl-border-5 {
+    border-top: 3px solid #fbc518;
+}
+
+
+/*----------------------------------Double Header-------------------------------------*/
+.parentTH th {
+    background-color: #fff;
+    border: 1px solid #d3dfda;
+    color: #000;
+}
+.noTH th {
+    color: #000;
+    border: 1px solid #d3dfda;
+    background-color:#fff;
+}
+.tripleH th {
+    border: 1px solid #fff;
+    color: #000;
+    background-color: #e4edfd;
+}
+.doubleH th {
+    background-color: #efefef;
+    border: 1px solid #fff;
+    color: #000;
+}
+.Pending {
+    color: blue !important;
+    font-weight: bold;
+}
+.Approved {
+    color: Green !important;
+    font-weight: bold;
+}
+.Rejected {
+    color: red !important;
+    font-weight: bold;
+}
+
+/*-------------------request table card------------------*/
+.card-shadow {
+    padding:4px 10px 0 10px;
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.request .card {
+    /*box-shadow: 0px 10px 10px 20px rgb(176 184 214 / 9%), 10px 10px 15px -5px #b0b8d6;*/
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding:0;
+    margin:0;
+}
+.card-title {
+    text-transform: initial !important;
+}
+#client-table table {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.client card {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.request .card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 14px !important;
+    text-transform: initial;
+    color: #fff;
+    background-color: #005f73;
+}
+
+.card-header .rrname {
+    font-weight: 400;
+    font-size: 14px !important;
+    color:#fff;
+}
+.card-header .rrqno {
+    font-weight: 400;
+    font-size: 14px !important;
+    color: #fff;
+}
+.request h4 {
+    font-weight: 400;
+    text-transform: initial;
+    font-size: 16px !important;
+}
+
+.request .rname {
+    color: #7b7c80;
+    font-weight: 400;
+    font-size: 14px !important;
+    margin-bottom: 5px;
+}
+.text-red a{
+    color: #e63946 !important;
+}
+.text-green a {
+    color: #219ebc !important;
+}
+.text-red a:hover {
+    color: #d62828 !important;
+}
+    .request p {
+        color: #302f2f;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+.request .bgR {
+    margin: 6px 2px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.request .rqno {
+    font-size: 14px !important;
+}

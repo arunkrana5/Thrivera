@@ -1,0 +1,72 @@
+﻿@{
+    bool IsEdit = false;
+    if (ClsApplicationSetting.GetSessionValue("Modify") == "True" && ViewBag.Approved != 2)
+    {
+        IsEdit = true;
+    }
+}
+<div class="table-responsive">
+    <table id="example" class="table table-bordered text-nowrap key-buttons">
+        <thead>
+            <tr>
+                <th>S.no.</th>
+                @if (IsEdit)
+                {
+                    <th>Action</th>
+                }
+                <th>EMP Code</th>
+                <th>Dealer Code</th>
+                <th>Branch Code</th>
+                <th>Region</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Area</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Inserted Date</th>
+                <th>Inserted by</th>
+                <th>Updated Date</th>
+                <th>Updated by</th>
+                <th>IP Address</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @{ int inycount = 0;}
+            @foreach (TourPlan.List item in Model)
+            {
+                inycount++;
+                <tr>
+                    <td>
+                        @inycount
+                        <input type="hidden" name="I" value="@item.TourPlanID" />
+                        <input type="hidden" name="N" value="@item.EMPName" />
+
+                    </td>
+                    @if (IsEdit)
+                    {
+                        <td>
+                            <a title="Edit" onclick="ListHeaderAdd(@item.TourPlanID);" data-toggle='tooltip'> <i class="fa-solid fa-pen-to-square checkgreen" aria-hidden="true"></i> </a>
+                        </td>
+                    }
+                    <td><a onclick="ShowHistory(this)" data-toggle='tooltip' data-original-title='Click to view update history' title="Click to view update history"> @item.EMPCode </a></td>
+                    <td>@item.DealerCode</td>
+                    <td>@item.BranchCode</td>
+                    <td>@item.RegionName</td>
+                    <td>@item.StateName</td>
+                    <td>@item.CityName</td>
+                    <td>@item.AreaName</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.CreatedBy</td>
+                    <td>@item.ModifiedDate</td>
+                    <td>@item.ModifiedBy</td>
+                    <td>@item.IPAddress</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

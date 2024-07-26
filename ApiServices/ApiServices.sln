@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServices", "ApiServices.csproj", "{79EEE51D-F61F-4991-A737-4388C9B80110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModal", "..\DataModal\DataModal.csproj", "{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79EEE51D-F61F-4991-A737-4388C9B80110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EEE51D-F61F-4991-A737-4388C9B80110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EEE51D-F61F-4991-A737-4388C9B80110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EEE51D-F61F-4991-A737-4388C9B80110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6F011C-3C27-43F8-B199-943C50CF0DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6F011C-3C27-43F8-B199-943C50CF0DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6F011C-3C27-43F8-B199-943C50CF0DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6F011C-3C27-43F8-B199-943C50CF0DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A4E8A50-A21D-439E-9626-577FBB2E4BB9}
+	EndGlobalSection
+EndGlobal

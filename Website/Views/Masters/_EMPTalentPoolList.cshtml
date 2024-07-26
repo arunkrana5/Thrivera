@@ -1,0 +1,84 @@
+﻿@model IList<EMPTalentPool.List>
+
+<div class="table-responsive">
+    <table id="ExportTable" class="table table-bordered text-nowrap key-buttons table-responsive-sm table-responsive-md">
+        <thead>
+            <tr>
+                <th>S.no.</th>
+                <th>Action</th>
+                <th>File</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>DOB</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Region</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Branch Code</th>
+                <th>Dealer Code</th>
+                <th>Dealer Type</th>
+                <th>Trade Experience</th>
+                <th>Expected Salary</th>
+                <th>Qualification</th>
+                <th>Status</th>
+                <th>Inserted Date</th>
+                <th>Inserted by</th>
+                <th>Updated Date</th>
+                <th>Updated by</th>
+                <th>IP Address</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+            @{ int Count = 0;}
+            @foreach (EMPTalentPool.List item in Model)
+            {
+                Count++;
+                <tr class="@(item.IsActive == true?"": "trrowred")">
+                    <td>@Count</td>
+                    <td>
+                        <input type="hidden" name="I" value="@item.TPID" />
+                        <input type="hidden" name="N" value="@item.TPCode" />
+
+                        @if (ClsApplicationSetting.GetSessionValue("Modify") == "True")
+                        {
+                            @Html.Raw(item.IsActive == true
+             ? "<a  data-toggle='tooltip' data-original-title='Click to DeActivate' list='EMPTalentPool_IsActive' OP='0' class='AIsActive' ><i class='fa fa-circle-check' aria-hidden='true'></i></a>"
+             : "<a data-toggle='tooltip' data-original-title='Click to Activate' list='EMPTalentPool_IsActive' OP='1'  class='AIsActive' >  <i class='fa fa-circle-xmark' aria-hidden='true'></i></a>")
+                    <a title="Edit" href="@Url.Action("AddEMPTalentPool", new { src = ClsCommon.Encrypt(ViewBag.MenuID + "*" + "/Masters/AddEMPTalentPool" + "*" + item.TPID) })" data-toggle='tooltip'> @*<i class="fa fa-pencil-square-o checkgreen" aria-hidden="true"></i>*@ <i class="fa-solid fa-pen-to-square checkgreen"></i> </a>
+                        }
+                    </td>
+                    <td>
+                        @if (item.AttachID > 0)
+                        {
+                            <a href="@item.AttachPath" target="_blank">View Document</a>
+                        }
+                    </td>
+
+                    <td> @item.Name</td>
+                    <td> @item.TPCode</td>
+                    <td>@item.DOB</td>
+                    <td>@item.Mobile</td>
+                    <td>@item.Email</td>
+                    <td>@item.Region</td>
+                    <td>@item.State</td>
+                    <td>@item.City</td>
+                    <td>@item.BranchCode</td>
+                    <td>@item.DealerCode</td>
+                    <td>@item.DealerType</td>
+                    <td>@item.Trade_Experience</td>
+                    <td>@item.ExpectedSalary</td>
+                    <td>@item.Qualification</td>
+                    <td>@item.Status</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.CreatedBy</td>
+                    <td>@item.ModifiedDate</td>
+                    <td>@item.ModifiedBy</td>
+                    <td>@item.IPAddress</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

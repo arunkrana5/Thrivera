@@ -1,0 +1,61 @@
+﻿<div class="">
+    @model LeaveType.Add
+
+
+    @using (Ajax.BeginForm("_LeaveTypeAdd", "Leave",
+            new { src = ViewBag.src },
+             new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess", OnBegin = "ShowLoadingDialog()" },
+                new { @id = "_LeaveTypeAddForm" })
+        )
+    {
+
+
+
+        @Html.HiddenFor(x => Model.LeaveTypeID)
+        <div class="row p-2">
+
+
+            <div class="col-lg-4 col-md-4 col-sm-6 form-group">
+                <label>Display Name<sup>*</sup></label>
+                @Html.TextBoxFor(model => model.DisplayName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DisplayName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 form-group">
+                <label>Color </label>
+                @Html.TextBoxFor(model => model.Color, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 form-group">
+                <label>Icon </label>
+                @Html.TextBoxFor(model => model.Icon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 form-group">
+                <label>Priority</label>
+                @Html.TextBoxFor(model => model.Priority, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Priority, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 form-group">
+                <label>Monthly Accrued <small>In Hours</small> </label>
+                @Html.TextBoxFor(model => model.MonthlyAccrued, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MonthlyAccrued, "", new { @class = "text-danger" })
+            </div>
+
+
+
+            <div class="col-lg-12 form-group text-right">
+
+                @if (Model.LeaveTypeID > 0)
+                {
+                    <button type="submit" class="btn client-save btn-primary" name="Command" value="Add"> Update</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn client-save btn-primary" name="Command" value="Add"> Submit</button>
+                }
+            </div>
+
+        </div>
+    }
+    </div>

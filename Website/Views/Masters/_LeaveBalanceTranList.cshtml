@@ -1,0 +1,46 @@
+﻿
+@model IList<LeaveBalance.TranList>
+
+<div class="table-responsive">
+    <table id="example" class="table table-striped table-bordered dt-responsive nowrap tbltick new_width table-responsive-md table-responsive-sm" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
+        <thead>
+            <tr>
+                <th>S.no.</th>
+                <th>Month</th>
+                <th>Leave Type</th>
+                <th>Opening</th>
+                <th>Accrued</th>
+                <th>Arrears</th>
+                <th>Total</th>
+                <th>Availed</th>
+                <th>Balance </th>
+                <th>Updated Date</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @{ int Count = 0;}
+            @foreach (var item in Model)
+            {
+                Count++;
+            <tr>
+                <td>@Count</td>
+
+                <td> @item.MonthName</td>
+                <td> @item.LeaveTypeName</td>
+                <td>@item.Opening_Hrs</td>
+                <td>@item.Accrued_Hrs</td>
+                <td>@item.Arrears_Hrs</td>
+                <td>@item.Total_Hrs</td>
+                <td>@item.Availed_Hrs</td>
+                <td>@item.Balance_Hrs</td>
+                <td>@item.ModifiedDate</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

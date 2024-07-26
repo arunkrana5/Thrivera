@@ -1,0 +1,328 @@
+﻿@model Employee.Add
+@section style{
+    @System.Web.Optimization.Styles.Render("~/bundle/dataTablecss")
+
+    @Html.IncludeVersionedCss(Url.Content("../assets/design/plugins/fileupload/css/fileupload.css"))
+
+}
+
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title ml-1 mb-2">Employee Master</h4>
+    </div>
+
+</div>
+@using (Ajax.BeginForm("EmployeeAdd", "Masters",
+        new { src = ViewBag.src },
+         new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess", OnBegin = "ShowLoadingDialog()" },
+            new { @id = "EmployeeAddForm", @enctype = "multipart/form-data" })
+    )
+{
+
+    <div class="row p-2 emp-mast m-1">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card p-4">
+                <h3 class="card-title">Photo Upload </h3>
+                @Html.TextBoxFor(x => x.Upload, new { @class = "dropify", @type = "file" })
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Employee Detail </h3>
+                </div>
+                <div class="card-body pb-2">
+                    <div class="row ">
+                        <div class="col-md-12  col-sm-12 col-xl-12">
+                            <div class="row">
+
+                                <div class="col-lg-6 form-group">
+                                    <label>Employee Code<sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.EMPCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EMPCode, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-6 form-group">
+                                    <label>Employee Name <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.EMPName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EMPName, "", new { @class = "text-danger" })
+                                </div>
+                                @*<div class="col-md-12"></div>*@
+                                <div class="col-lg-3 form-group">
+                                    <label>Father Name<sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.FatherName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <label>Date of Birth <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.DOB, new { @class = "form-control", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Gender</label>
+                                    @Html.EnumDropDownListFor(m => m.Gender, "Select", new { @class = "form-control applyselect" })
+                                    @Html.ValidationMessageFor(m => m.Gender)
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <label>Designation <sup>*</sup></label>
+                                    @Html.DropDownListFor(n => n.DesignID, new SelectList(Model.DesignationList, "ID", "Name", Model.DesignID), "Select",
+                            new { @class = "form-control  applyselect" })
+                                    @Html.ValidationMessageFor(model => model.DesignID, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Department<sup>*</sup></label>
+                                    @Html.DropDownListFor(n => n.DepartID, new SelectList(Model.DepartmentList, "ID", "Name", Model.DepartID), "Select",
+                            new { @class = "form-control  applyselect" })
+                                    @Html.ValidationMessageFor(model => model.DepartID, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Date of Joining <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.DOJ, new { @class = "form-control", @type = "date" })
+                                    @Html.ValidationMessageFor(model => model.DOJ, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-lg-3 form-group">
+                                    <label>HOD</label>
+                                    @Html.DropDownListFor(n => n.HODID, new SelectList(Model.EMPList, "ID", "Name", Model.HODID), "Select",
+                             new { @class = "form-control  applyselect" })
+                                    @Html.ValidationMessageFor(model => model.HODID, "", new { @class = "text-danger" })
+                                </div>
+
+
+
+                                <div class="col-lg-3 form-group">
+                                    <label>PAN <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.PAN, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PAN, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Email ID <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <label>Phone <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <label>UAN</label>
+                                    @Html.TextBoxFor(model => model.UAN, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.UAN, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3 form-group">
+                                    <label>ESIC No</label>
+                                    @Html.TextBoxFor(model => model.ESIC, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ESIC, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"> Address </h3>
+                </div>
+                <div class="card-body pb-2">
+                    <div class="row ">
+                        <div class="col-md-12 col-xl-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-4 form-group">
+                                    <label>State <sup>*</sup></label>
+                                    @Html.HiddenFor(x => x.AddressDetails.AddressID)
+                                    @Html.DropDownListFor(n => n.AddressDetails.StateID, new SelectList(Model.StateList, "ID", "Name", Model.AddressDetails.StateID), "Select",
+                             new { @class = "form-control  applyselect", @onchange = "FillCity(this)" })
+                                    @Html.ValidationMessageFor(model => model.AddressDetails.StateID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-4 form-group">
+                                    <label>City  <sup>*</sup></label>
+                                    <input type="hidden" value="@Model.AddressDetails.CityID" id="hdnAddressDetails_CityID" />
+                                    @Html.DropDownListFor(n => n.AddressDetails.CityID, new SelectList(Model.CityList, "ID", "Name", Model.AddressDetails.CityID), "Select",
+                              new { @class = "form-control  applyselect" })
+                                    @Html.ValidationMessageFor(model => model.AddressDetails.CityID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-4 form-group">
+                                    <label>Location <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.AddressDetails.Location, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AddressDetails.Location, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                    <label>Address</label>
+                                    @Html.TextAreaFor(model => model.AddressDetails.Address1, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AddressDetails.Address1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Bank </h3>
+                </div>
+                <div class="card-body pb-2">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="row">
+
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Branch Name <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.BankDetails.BranchName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BankDetails.BranchName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <label>Bank Name  <sup>*</sup></label>
+                                    @Html.HiddenFor(x => x.BankDetails.BankID)
+                                    @Html.TextBoxFor(model => model.BankDetails.BankName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BankDetails.BankName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3 form-group">
+                                    <label>Account No <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.BankDetails.AccountNo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BankDetails.AccountNo, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3 form-group">
+                                    <label>IFSC Code <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.BankDetails.IFSCCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BankDetails.IFSCCode, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Create User  </h3>
+                </div>
+                <div class="card-body pb-2">
+                    <div class="row ">
+                        <div class="col-md-12 col-xl-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-3  col-md-6 col-sm-6 form-group">
+                                    <label>User ID<sup>*</sup></label>
+                                    <input type="hidden" name="@Html.NameFor(x=>x.UserDetails.email)" value="" />
+                                    <input type="hidden" name="@Html.NameFor(x=>x.UserDetails.Phone)" value="NA" />
+                                    @Html.HiddenFor(model => model.UserDetails.ID)
+                                    @Html.TextBoxFor(model => model.UserDetails.UserID, new { @class = "form-control" })
+
+                                    @Html.ValidationMessageFor(model => model.UserDetails.UserID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 form-group">
+                                    <label>Name<sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.UserDetails.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.UserDetails.Name, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-lg-3   form-group">
+                                    <label>Password <sup>*</sup></label>
+                                    @Html.TextBoxFor(model => model.UserDetails.Password, new { @class = "form-control", @type = "password" })
+                                    @Html.ValidationMessageFor(model => model.UserDetails.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3   col-md-6 col-sm-6 form-group">
+                                    <label>Role<sup>*</sup></label>
+                                    @Html.DropDownListFor(n => n.UserDetails.RoleID, new SelectList(Model.RoleList, "ID", "Name", Model.UserDetails.RoleID), "Select Role",
+                                        new { @class = "form-control applyselect" })
+                                    @Html.ValidationMessageFor(model => model.UserDetails.RoleID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-12 button-clients">
+                                    @if (string.IsNullOrEmpty(Model.DOL))
+                                    {
+                                        <button name="Command" value="Add" class="btn client-save btn-primary" type="submit">Save changes</button>
+                                    }
+                                    <a href="@Url.Action("EmployeeList",new { src = ClsCommon.Encrypt(ViewBag.MenuID+"*"+"/Masters/EmployeeList") })" type="button" class="btn client-close">cancel</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+
+@section scripts    {
+    @System.Web.Optimization.Scripts.Render("~/bundle/unobtrusivejs")
+    <!--Chart js -->
+    @Html.IncludeVersionedJs(Url.Content("../assets/design/plugins/fileupload/js/dropify.js"))
+    @Html.IncludeVersionedJs(Url.Content("../assets/design/js/filupload.js"))
+
+    <script>
+        $(document).ready(function () {
+            FillCity()
+        });
+
+
+        function FillCity() {
+            var StateID = $("#AddressDetails_StateID").find("option:selected").val();
+            if (StateID != '') {
+                var data = GetDropDownList(StateID, "City");
+                if (data != '') {
+                    $("#AddressDetails_CityID").empty();
+                    $("#AddressDetails_CityID").append($("<option />").val("").text("Select"));
+                    $(data).each(function () {
+                        $("#AddressDetails_CityID").append($("<option />").val(this.ID).text(this.Name));
+                        $("#AddressDetails_CityID").select2();
+
+                    });
+                    if ($("#hdnAddressDetails_CityID").val() != 0) {
+                        $("#AddressDetails_CityID").val($("#hdnAddressDetails_CityID").val()).change();
+                    }
+                    CloseLoadingDialog();
+                } else {
+                    $("#AddressDetails_CityID").empty();
+                    $("#AddressDetails_CityID").append($("<option />").val("").text("Select"));
+                }
+            } else {
+                $("#AddressDetails_CityID").empty();
+                $("#AddressDetails_CityID").append($("<option />").val("").text("Select"));
+            }
+
+        }
+
+
+        function OnSuccess(obj) {
+            if (obj.Status) {
+                SuccessToaster(obj.SuccessMessage);
+                window.location.href = obj.RedirectURL;
+            }
+            else {
+                CloseLoadingDialog();
+                FailToaster(obj.SuccessMessage);
+
+            }
+        }
+
+    </script>
+}

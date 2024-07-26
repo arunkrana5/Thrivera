@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3E077F0-BF47-4AF2-BCB6-EE7D8A78259B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataModal</RootNamespace>
+    <AssemblyName>DataModal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\ApiServices\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.2.10, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\SharpZipLib.1.3.2\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\ApiServices\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\NPOI.2.5.5\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\NPOI.2.5.5\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\NPOI.2.5.5\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\Website\packages\NPOI.2.5.5\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\ApiServices\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\ApiServices\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\ApiServices\packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommanClass\ClsCommon.cs" />
+    <Compile Include="CommanClass\clsDataBaseHelper.cs" />
+    <Compile Include="CommanClass\Common_SPU.cs" />
+    <Compile Include="CommanClass\CustomMultipartFileStreamProvider.cs" />
+    <Compile Include="DataAccess\DataBaseHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IAccountsHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IApprovalsHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IExportHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IHomeHelper.cs" />
+    <Compile Include="ModelsMasterHelper\ILeaveHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IMasterHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IProductHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IRecuritHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IReportHelper.cs" />
+    <Compile Include="ModelsMasterHelper\ISchedularHelper.cs" />
+    <Compile Include="ModelsMasterHelper\IToolHelper.cs" />
+    <Compile Include="ModelsMasterHelper\ITransactionHelper.cs" />
+    <Compile Include="ModelsMasterHelper\ITravelHelper.cs" />
+    <Compile Include="ModelsMaster\AccountsModel.cs" />
+    <Compile Include="ModelsMaster\ApprovalsModal.cs" />
+    <Compile Include="ModelsMaster\ExportModal.cs" />
+    <Compile Include="ModelsMaster\HomeModal.cs" />
+    <Compile Include="ModelsMaster\LeaveModal.cs" />
+    <Compile Include="ModelsMaster\MasterModal.cs" />
+    <Compile Include="ModelsMaster\ProductModal.cs" />
+    <Compile Include="ModelsMaster\RecuritModal.cs" />
+    <Compile Include="ModelsMaster\ReportModal.cs" />
+    <Compile Include="ModelsMaster\SchedularModal.cs" />
+    <Compile Include="ModelsMaster\ToolsModal.cs" />
+    <Compile Include="ModelsMaster\TransactionModal.cs" />
+    <Compile Include="ModelsMaster\TravelModal.cs" />
+    <Compile Include="Models\AbsentTracker.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AdminMenu.cs" />
+    <Compile Include="Models\AdminUser.cs" />
+    <Compile Include="Models\AllEnum.cs" />
+    <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\Attendance_Log.cs" />
+    <Compile Include="Models\Attendence.cs" />
+    <Compile Include="Models\AutoReport.cs" />
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Calender.cs" />
+    <Compile Include="Models\ChallanDocuments.cs" />
+    <Compile Include="Models\Charts.cs" />
+    <Compile Include="Models\CompetitionEntry.cs" />
+    <Compile Include="Models\ConfigSetting.cs" />
+    <Compile Include="Models\ContactUs_Query.cs" />
+    <Compile Include="Models\CounterDisplay.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DailySummary.cs" />
+    <Compile Include="Models\DashboardItems.cs" />
+    <Compile Include="Models\DateConfigration.cs" />
+    <Compile Include="Models\Dealer.cs" />
+    <Compile Include="Models\DealerImport.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\EmailTemplate.cs" />
+    <Compile Include="Models\EMPFlags.cs" />
+    <Compile Include="Models\EMPImport.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EMPTalentPool.cs" />
+    <Compile Include="Models\EMPTalentPoolImport.cs" />
+    <Compile Include="Models\ErrorLog.cs" />
+    <Compile Include="Models\ExecuteAction.cs" />
+    <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Items_Import.cs" />
+    <Compile Include="Models\LeaveLog.cs" />
+    <Compile Include="Models\AttendenceStatus.cs" />
+    <Compile Include="Models\LeaveType.cs" />
+    <Compile Include="Models\ManageActivities.cs" />
+    <Compile Include="Models\MarkAttendence.cs" />
+    <Compile Include="Models\MasterCatalogue.cs" />
+    <Compile Include="Models\Masters.cs" />
+    <Compile Include="Models\MastersImport.cs" />
+    <Compile Include="Models\MOP.cs" />
+    <Compile Include="Models\PJPEntry.cs" />
+    <Compile Include="Models\PJPPlan.cs" />
+    <Compile Include="Models\PJPPlan_Import.cs" />
+    <Compile Include="Models\PostResponse.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\Requirement.cs" />
+    <Compile Include="Models\ResponseResult.cs" />
+    <Compile Include="Models\RFCEntry.cs" />
+    <Compile Include="Models\SaleEntry_Import.cs" />
+    <Compile Include="Models\SMTPMail.cs" />
+    <Compile Include="Models\Reports.cs" />
+    <Compile Include="Models\RFCRequest.cs" />
+    <Compile Include="Models\SaleEntry.cs" />
+    <Compile Include="Models\TargetImport.cs" />
+    <Compile Include="Models\Targets.cs" />
+    <Compile Include="Models\TourPlan.cs" />
+    <Compile Include="Models\TourPlan_Import.cs" />
+    <Compile Include="Models\Travel.cs" />
+    <Compile Include="Models\UserCurrent_Location.cs" />
+    <Compile Include="Models\UserHierarchy.cs" />
+    <Compile Include="Models\UserHierarchyImport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="bin\Debug\Dapper.xml" />
+    <Content Include="bin\Debug\DataModal.dll" />
+    <Content Include="bin\Debug\DataModal.pdb" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\xunit.abstractions.dll" />
+    <Content Include="bin\Debug\xunit.abstractions.xml" />
+    <Content Include="bin\Debug\xunit.core.dll" />
+    <Content Include="bin\Debug\xunit.core.xml" />
+    <Content Include="bin\Release\Dapper.dll" />
+    <Content Include="bin\Release\Dapper.xml" />
+    <Content Include="bin\Release\DataModal.dll" />
+    <Content Include="bin\Release\DataModal.pdb" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

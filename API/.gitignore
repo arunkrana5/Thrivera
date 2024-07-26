@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/obj/SqlServer/Package/PackageTmp
+/obj/SqlServer
+/obj
+/bin
+/.vs
+
